@@ -1,3 +1,16 @@
 {
-  "extends": "astro/tsconfigs/strict"
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "jsx": "react-jsx", 
+    "paths": {
+      "react": ["./node_modules/preact/compat"],
+      "react-dom": ["./node_modules/preact/compat"]
+    },       // Set to "react-jsx" for Preact
+    "strict": true,              // Enable strict type checking
+    "moduleResolution": "node",  // Use Node-style module resolution
+    "esModuleInterop": true,     // Enable interoperability between CommonJS and ES modules
+    "skipLibCheck": true         // Skip checking declaration files
+  },
+  "include": ["src/**/*"],       // Include all source files in the src directory
+  "exclude": ["node_modules", "dist"] // Exclude certain directories
 }
